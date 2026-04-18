@@ -100,13 +100,17 @@
       font-size:15px;
     }
 
+    /* Video block: fixed 2048x2048 (scales down on smaller screens) */
     .video-wrap{
-      position:relative;
+      width: min(2048px, 100%);
+      height: auto;
+      max-height: 90vh;
+      margin: 0 auto;
       border-radius:12px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.14);
       background: #000;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 1 / 1;
     }
     video{
       width:100%;
@@ -120,33 +124,6 @@
       margin-top:10px;
     }
 
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    a.button{
-      text-decoration:none;
-      color: var(--text);
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--card-border);
-      background: rgba(255,255,255,.04);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-      font-weight:600;
-      font-size:14px;
-    }
-    a.button:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,.22);
-      background: rgba(255,255,255,.07);
-    }
-    a.button.primary{
-      border: 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #061018;
-    }
     footer{
       margin-top:14px;
       color: var(--muted);
@@ -173,18 +150,14 @@
         <section class="section">
           <h2>Portfolio Reel</h2>
           <div class="video-wrap">
+            <!-- Replace the src with your video path/filename -->
             <video controls autoplay muted loop playsinline preload="metadata">
               <source src="Impact low.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="video-hint">
-            //Add your MP4 to <code>/assets/portfolio.mp4</code> in this repo (create an <code>assets</code> folder if needed).
-          </div>
-
-          <div class="actions">
-            <a class="button primary" href="#work">See Work</a>
-            <a class="button" href="#contact">Contact</a>
+            Tip: If you prefer a folder, place the file at <code>/assets/portfolio.mp4</code> and update the <code>src</code> above.
           </div>
         </section>
 
@@ -196,11 +169,11 @@
 
           <h2 style="margin-top:14px;">Contact</h2>
           <p>Replace these with your real links:</p>
-          <div class="actions">
-            <a class="button" href="mailto:pierre.pp.palmer@gmail.com">Email</a>
-            <a class="button" href="https://www.fiverr.com/s/38rxkRr" target="_blank" rel="noopener">Fiverr</a>
-            <a class="button" href="https://x.com/peplmGameDev" target="_blank" rel="noopener">X</a>
-          </div>
+          <p>
+            <a href="mailto:pierre.pp.palmer@gmail.com" style="color: var(--text);">Email</a> ·
+            <a href="https://www.fiverr.com/s/38rxkRr" target="_blank" rel="noopener" style="color: var(--text);">Fiverr</a> ·
+            <a href="https://x.com/peplmGameDev" target="_blank" rel="noopener" style="color: var(--text);">X</a>
+          </p>
         </aside>
       </div>
 
