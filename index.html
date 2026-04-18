@@ -1,17 +1,203 @@
-<section id="contact">
-   <h2>Contact</h2>
-   <p>pierre.pp.palmer@gmail.com</p>
-   <div class="actions">
-       <a class="button" href="https://www.fiverr.com/s/38rxkRr">Fiverr</a>
-       <a class="button" href="https://x.com/peplmGameDev">X</a>
-   </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pierre VFX</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#111827;
+      --card: rgba(255,255,255,.06);
+      --card-border: rgba(255,255,255,.12);
+      --text:#e5e7eb;
+      --muted:#a7b0be;
+      --accent:#8b5cf6;
+      --accent2:#22d3ee;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(139,92,246,.28), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(34,211,238,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 18px;
+    }
+    .wrap{ width:min(980px, 100%); }
+    .card{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      backdrop-filter: blur(10px);
+    }
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:baseline;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3.2vw, 42px);
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .tagline{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size: 16px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--card-border);
+      color:var(--muted);
+      font-size:14px;
+      background: rgba(255,255,255,.04);
+    }
+    .pill strong{ color: var(--text); font-weight:600; }
 
-<style>
-.actions {
-   /* Your existing styles here if not present */
-}
-.button {
-   /* Your existing styles here if not present */
-}
-</style>
+    .grid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 840px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .section{
+      border:1px solid var(--card-border);
+      border-radius:14px;
+      background: rgba(0,0,0,.18);
+      padding:16px;
+    }
+    .section h2{
+      margin:0 0 10px 0;
+      font-size:16px;
+      letter-spacing:.2px;
+      color: #dbe2ef;
+    }
+    .section p{
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    /* Video block: square up to 2048x2048; scales down on small screens */
+    .video-wrap{
+      width: min(2048px, 100%);
+      max-height: 90vh;
+      margin: 0 auto;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: #000;
+      aspect-ratio: 1 / 1;
+    }
+    video{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    a.button{
+      text-decoration:none;
+      color: var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--card-border);
+      background: rgba(255,255,255,.04);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      font-weight:600;
+      font-size:14px;
+    }
+    a.button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.07);
+    }
+
+    footer{
+      margin-top:14px;
+      color: var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div>
+          <h1>Pierre — VFX Artist</h1>
+          <p class="tagline">Realtime VFX for games</p>
+        </div>
+        <div class="pill">
+          <span>Available for:</span> <strong>Contract / Freelance</strong>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section class="section">
+          <h2>Portfolio Reel</h2>
+          <div class="video-wrap">
+            <video controls autoplay muted loop playsinline preload="metadata">
+              <source src="Impact low.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+
+        <aside class="section" id="contact">
+          <h2>About</h2>
+          <p>
+            I create stylized and realistic real-time effects for games: magic, impacts, environment, shaders, and optimization-friendly workflows.
+          </p>
+
+          <h2 style="margin-top:14px;">Contact</h2>
+          <p>pierre.pp.palmer@gmail.com</p>
+
+          <div class="actions">
+            <a class="button" href="https://www.fiverr.com/s/38rxkRr" target="_blank" rel="noopener">Fiverr</a>
+            <a class="button" href="https://x.com/peplmGameDev" target="_blank" rel="noopener">X</a>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        © <span id="y"></span> Pierre — Realtime VFX
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
